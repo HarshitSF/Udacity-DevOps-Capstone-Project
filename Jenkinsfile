@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "harshit/staging"
+        registry = "harshit70/apacheapp"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
