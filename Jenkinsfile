@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "vahiwe/staging"
+        registry = "harshit/staging"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Update Kube Config'){
             steps {
-                withAWS(region:'us-east-1',credentials:'aws') {
-                    sh 'aws eks --region us-east-1 update-kubeconfig --name stage-cluster'                    
+                withAWS(region:'us-east-2',credentials:'aws') {
+                    sh 'aws eks --region us-east-2 update-kubeconfig --name cluster-harshit1-cicd'                    
                 }
             }
         }
